@@ -18,6 +18,10 @@ func main() {
 		writer.Write([]byte("Hello v3"))
 	})
 
+	http.HandleFunc("/test/v4", func(writer http.ResponseWriter, request *http.Request) {
+		writer.Write([]byte("Hello v4"))
+	})
+
 	fmt.Println("Listening on port 8899")
 	err := http.ListenAndServe(":8899", nil)
 	if err != nil {
